@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRAR</title>
+</head>
+<body>
+    <header class="centro">
+        <img src="assets/logo.png" width="600px" height="100px">
+        <img src="assets/sublogo.gif" width="120px" height="120px">
+    </header><br>
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="informacion.html">INFORMACIÓN</a>
+        <a style="float: right;" href="login.html">CERRAR SESIÓN</a>
+    </nav>
+<div class="container" style="width:auto;height:auto;float:left; margin-left: 500px;">
+    <div class="texto" style="width:auto;height:auto;">
+        <h1 class="text-4xl font-bold mb-4 animate-fade-in" style="text-align: center;width:auto;height: auto;margin-bottom:10px;">REGISTRAR USUARIO</h1>
+        <p class="text-4xl font-bold mb-4 animate-fade-in2" style="text-align: center;width:auto;height: auto;">
+            Ingrese los datos del usuario
+        </p>
+    </div>
+    <form style="margin-left: 175px;">
+        <table>
+            <tr><td>Nombres completos: </td><td><input type="text" name="nombres" required/></td></tr>
+            <tr><td>Correo: </td><td><input type="text" name="correo" required/></td></tr>
+            <tr><td>Cedula: </td><td><input type="text" placeholder="CI"name="cedula" required/></td></tr>
+            <tr><td>Cargo:</td><td></td></tr>
+            <tr><td><input type="radio" name="RBCargo" value="Sur" style="transform: scale(1.75);"/>&nbsp;Administrador</td>
+            <td><input type="radio" name="RBCargo" value="Norte"style="transform: scale(1.75);"/>&nbsp;Operador</td></tr>
+            <tr><td>Contraseña: </td><td><input type="password" name="pass"/><button type="button" name="Rvercon1"><img src="assets/abierto.png" width="15px" height="15px"></button></td></tr>
+            <tr><td>Confirmar contraseña: </td><td><input type="password" name="ppass"/><button type="button" name="Rvercon2"><img src="assets/abierto.png" width="15px" height="15px"></button></td></tr>
+            <tr><td></td><td><input class="inputForm" type="submit" value="REGISTRAR" onclick="compararContraseñas()"/></td></tr>
+        </table>
+    </form>
+</div>
+<script>
+function compararContraseñas() {
+  var contraseña1 = document.getElementsByName("pass")[0].value;
+  var contraseña2 = document.getElementsByName("ppass")[0].value;
+
+  if (contraseña1 === contraseña2) {
+    alert("Las contraseñas son iguales.");
+  } else {
+    alert("Las contraseñas no coinciden.");
+  }
+}
+const passwordInput = document.querySelector('input[name="pass"]');
+const passwordInput1 = document.querySelector('input[name="ppass"]');
+const toggleButton = document.querySelector('button[name="Rvercon1"]');
+const toggleButton1 = document.querySelector('button[name="Rvercon2"]');
+toggleButton.addEventListener("click", function() {
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleButton.innerHTML= '<img src="assets/cerrado.png" width="15px" height="15px">'
+    } else {
+      passwordInput.type = "password";
+      toggleButton.innerHTML= '<img src="assets/abierto.png" width="15px" height="15px">'
+    }
+  });
+  toggleButton1.addEventListener("click", function() {
+	    if (passwordInput1.type === "password") {
+	      passwordInput1.type = "text";
+	      toggleButton1.innerHTML= '<img src="assets/cerrado.png" width="15px" height="15px">'
+	    } else {
+	      passwordInput1.type = "password";
+	      toggleButton1.innerHTML= '<img src="assets/abierto.png" width="15px" height="15px">'
+	    }
+});
+
+</script>
+<footer>
+    <ul>
+        <li><a href="https://www.facebook.com/Soldaatje.Gek/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/that_.john/">Instagram</a></li>
+        <li><a href="https://api.whatsapp.com/">Whatsapp</a></li>
+    </ul>
+</footer>
+</body>
+</html>
