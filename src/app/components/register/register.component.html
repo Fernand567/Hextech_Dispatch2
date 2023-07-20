@@ -6,23 +6,23 @@
 </head>
 <body>
     <header class="centro">
-        <img src="assets/logo.png" width="600px" height="100px">
-        <img src="assets/sublogo.gif" width="120px" height="120px">
+        <img src="/assets/logo.png" width="600px" height="100px">
+        <img src="/assets/sublogo.gif" width="120px" height="120px">
     </header><br>
     <nav>
-        <a href="index.html">INICIO</a>
-        <a href="servicios.html">SERVICIOS</a>
-        <a href="informacion.html">INFORMACIÓN</a>
-        <a style="float: right;" href="login.html">CERRAR SESIÓN</a>
-    </nav>
-<div class="container" style="width:auto;height:auto;float:left; margin-left: 500px;">
+      <a routerLink="/home">INICIO</a>
+      <a routerLink="/servicios">SERVICIOS</a>
+      <a routerLink="/informacion">INFORMACIÓN</a>
+      <a style="float: right;" routerLink="/login">INICIAR SESIÓN</a>
+  </nav>
+<div class="container" style="width:auto;height:auto;float:left; margin-left: 50px;">
     <div class="texto" style="width:auto;height:auto;">
-        <h1 class="text-4xl font-bold mb-4 animate-fade-in" style="text-align: center;width:auto;height: auto;margin-bottom:10px;">REGISTRAR USUARIO</h1>
-        <p class="text-4xl font-bold mb-4 animate-fade-in2" style="text-align: center;width:auto;height: auto;">
+        <h1 class="text-4xl font-bold mb-4 animate-fade-in" style="float: left;">REGISTRAR USUARIO</h1>
+        <p class="text-4xl font-bold mb-4 animate-fade-in2" style="float: right;">
             Ingrese los datos del usuario
         </p>
-    </div>
-    <form style="margin-left: 175px;">
+        <img class="animate-slide-right" src="assets/registrar.png" width="500px" height="450px" style="float:left;margin-top: 50px;">
+        <form class="animate-slide-up" style="float: right;">
         <table>
             <tr><td>Nombres completos: </td><td><input type="text" name="nombres" required/></td></tr>
             <tr><td>Correo: </td><td><input type="text" name="correo" required/></td></tr>
@@ -32,9 +32,11 @@
             <td><input type="radio" name="RBCargo" value="Norte"style="transform: scale(1.75);"/>&nbsp;Operador</td></tr>
             <tr><td>Contraseña: </td><td><input type="password" name="pass"/><button type="button" name="Rvercon1"><img src="assets/abierto.png" width="15px" height="15px"></button></td></tr>
             <tr><td>Confirmar contraseña: </td><td><input type="password" name="ppass"/><button type="button" name="Rvercon2"><img src="assets/abierto.png" width="15px" height="15px"></button></td></tr>
+            <tr><td><br></td><td><br></td></tr>
             <tr><td></td><td><input class="inputForm" type="submit" value="REGISTRAR" onclick="compararContraseñas()"/></td></tr>
         </table>
     </form>
+    </div>
 </div>
 <script>
 function compararContraseñas() {
